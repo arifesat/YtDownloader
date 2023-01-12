@@ -1,3 +1,6 @@
+##This code downloads max available resolution but doesn't save it as .mp4 file. If you want .mp4 output you should change video format with commented part.
+##but if you change it, videos will be saved at 1080p max.
+
 from __future__ import unicode_literals
 import yt_dlp
 
@@ -12,7 +15,7 @@ ydl_opts = {
     }
 ydl_opts_vid = {
     'ignoreerrors' : 'True',
-    'format' : 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
+    'format' : 'bestvideo+bestaudio[ext=m4a]/best', #'format' : 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
     'outtmpl': "~/Downloads/Video/%(title)s.%(ext)s" #Video download location
 }
 def download_video(video):
